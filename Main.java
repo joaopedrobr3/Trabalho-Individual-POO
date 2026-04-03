@@ -1,12 +1,20 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args){
+
         Scanner leia = new Scanner(System.in);
-        double saldo = 6000;
-        double deposito;
-        double saque;
+
+        double valor;
         int opcao;
-        int contadorSaques = 0;
+
+        System.out.println("Digite o número da sua conta:");
+        int numero = leia.nextInt();
+
+
+        System.out.println("Digite o nome do titular:");
+        String titular =leia.next();
+
+        ContaBancaria conta = new ContaBancaria(numero , titular);
 
         do {
             System.out.println("MENU");
@@ -19,38 +27,19 @@ public class Main {
             switch(opcao){
 
                 case 1:
-                    System.out.println("Seu saldo é de:" + saldo);
+                    conta.mostrarSaldo();
                     break;
 
                 case 2:
-                    System.out.println("Quanto você deseja depositar? ");
-                    deposito = leia.nextDouble();
-                    saldo = saldo + deposito;
-                    System.out.println("Você realizou um deposito no valor de: R$" + deposito);
+                    System.out.println("Quanto você deseja depositar: ");
+                    valor = leia.nextDouble();
+                    conta.depositar(valor);
                     break;
 
                 case 3:
-                    System.out.println("Quanto você deseja sacar? ");
-                    saque = leia.nextDouble();
-
-                    if (saque > 1000){
-                        System.out.println("Valor de saque acima do limite!");
-                    }
-                    else if(saque < 0){
-                        System.out.println("Valor inválido!");
-                    }
-                    else if(saldo < saque){
-                        System.out.println("Saldo Insuficiente!");
-                    }
-                    else if(contadorSaques < 3){
-                        contadorSaques++;
-                        saldo = saldo - saque;
-                        System.out.println("Você realizou um saque no valor de: R$" + saque);
-                        System.out.println("Deseja mais alguma coisa?");
-                    }
-                    else{
-                        System.out.println("Limites de saques diários atingido!");
-                    }
+                    System.out.println("Quanto você deseja sacar: ");
+                    valor = leia.nextDouble();
+                    conta.sacar(valor);
                     break;
 
                 case 0:
