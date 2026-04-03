@@ -1,4 +1,4 @@
-public class ContaBancaria{
+ class ContaBancaria{
     int numero;
     String titular;
     double saldo;
