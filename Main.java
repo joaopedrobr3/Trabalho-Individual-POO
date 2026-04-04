@@ -9,10 +9,10 @@ public class Main {
 
         System.out.println("Digite o número da sua conta:");
         int numero = leia.nextInt();
-
+        leia.nextLine();
 
         System.out.println("Digite o nome do titular:");
-        String titular =leia.next();
+        String titular = leia.nextLine();
 
         ContaBancaria conta = new ContaBancaria(numero , titular);
 
