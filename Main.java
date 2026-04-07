@@ -9,12 +9,14 @@ public class Main {
 
         System.out.println("Digite o número da sua conta:");
         int numero = leia.nextInt();
+
         leia.nextLine();
 
         System.out.println("Digite o nome do titular:");
         String titular = leia.nextLine();
 
         ContaBancaria conta = new ContaBancaria(numero , titular);
+
 
         do {
             System.out.println("MENU");
@@ -27,7 +29,7 @@ public class Main {
             switch(opcao){
 
                 case 1:
-                    conta.mostrarSaldo();
+                   System.out.println("Seu saldo é de :R$ " + conta.getSaldo());
                     break;
 
                 case 2:
