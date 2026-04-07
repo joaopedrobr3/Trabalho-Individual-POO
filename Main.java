@@ -1,28 +1,13 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args){
-
-        Scanner leia = new Scanner(System.in);
-
         double valor;
         int opcao;
 
-        System.out.println("Olá!");
-        System.out.println("Digite o número da conta que deseja acessar: ");
-        int numero = leia.nextInt();
-        while(numero <= 0){
-            System.out.println("Número invalido!\nDigite um número válido: ");
-            numero = leia.nextInt();
-        }
-        leia.nextLine();
+        Scanner leia = new Scanner(System.in);
 
-        System.out.println("Digite o nome do titular da conta que deseja acessar: ");
-        String titular = leia.nextLine();
-        while(titular == null || titular.isEmpty()){
-            System.out.println("O nome do titular não pode ficar vazio\nDigite um nome de titular válido:");
-            titular = leia.nextLine();
-        }
-        ContaBancaria conta = new ContaBancaria(numero, titular);
+        ContaBancaria.validacao();
+        ContaBancaria conta = new ContaBancaria();
 
         do {
             System.out.println("MENU");
