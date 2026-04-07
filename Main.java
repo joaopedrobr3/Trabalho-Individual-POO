@@ -7,16 +7,22 @@ public class Main {
         double valor;
         int opcao;
 
-        System.out.println("Digite o número da sua conta:");
+        System.out.println("Olá!");
+        System.out.println("Digite o número da conta que deseja acessar: ");
         int numero = leia.nextInt();
-
+        while(numero <= 0){
+            System.out.println("Número invalido!\nDigite um número válido: ");
+            numero = leia.nextInt();
+        }
         leia.nextLine();
 
-        System.out.println("Digite o nome do titular:");
+        System.out.println("Digite o nome do titular da conta que deseja acessar: ");
         String titular = leia.nextLine();
-
-        ContaBancaria conta = new ContaBancaria(numero , titular);
-
+        while(titular == null || titular.isEmpty()){
+            System.out.println("O nome do titular não pode ficar vazio\nDigite um nome de titular válido:");
+            titular = leia.nextLine();
+        }
+        ContaBancaria conta = new ContaBancaria(numero, titular);
 
         do {
             System.out.println("MENU");
