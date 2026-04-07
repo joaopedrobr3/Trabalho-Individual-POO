@@ -1,17 +1,16 @@
  class ContaBancaria{
-    int numero;
-    String titular;
-    double saldo;
-    int contadorSaques;
+    private int numero;
+    private String titular;
+    private double saldo = 50;
+    private int contadorSaques = 0;
 
-    ContaBancaria(int numero, String titular){
+
+    public ContaBancaria(int numero, String titular){
         this.numero = numero;
         this.titular = titular;
-        this.saldo = 50;
-        this.contadorSaques = 0;
-
     }
-    void depositar(double valor){
+
+    public void depositar(double valor){
         if(valor > 0){
             saldo = saldo + valor;
             System.out.println("Você realizou um deposito no valor de: R$" + valor);
@@ -21,7 +20,7 @@
         }
 
     }
-    void sacar(double valor){
+    public void sacar(double valor){
         if(valor > 1000){
             System.out.println("Valor de saque acima do limite!");
         }
@@ -41,7 +40,7 @@
         }
 
     }
-    void mostrarSaldo(){
+    public void mostrarSaldo(){
         System.out.println("Seu saldo é de :R$ " + saldo);
 
     }
