@@ -9,16 +9,27 @@ class ContaBancaria{
         this.titular = titular;
     }
 
-
     public int getNumero(){
         return numero;
     }
+    public void setNumero(int n){
+        this.numero = n;
+    }
+
     public String getTitular(){
         return titular;
     }
+    public void setTitular(String t){
+        this.titular = t;
+    }
+
     public double getSaldo(){
         return saldo;
     }
+    public void setSaldo(double s){
+        this.saldo = s;
+    }
+
     public int getcontadorSaques(){
         return contadorSaques;
     }
