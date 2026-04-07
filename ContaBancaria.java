@@ -1,9 +1,21 @@
- class ContaBancaria{
+
+
+class ContaBancaria{
     private int numero;
-    private String titular;
+    private String titular ;
     private double saldo = 50;
     private int contadorSaques = 0;
 
+
+    public int getNumero(){
+        return numero;
+    }
+    public String getTitular(){
+        return titular;
+    }
+    public double getSaldo(){
+        return saldo;
+    }
 
     public ContaBancaria(int numero, String titular){
         this.numero = numero;
@@ -39,9 +51,9 @@
             System.out.println("Você realizou um saque no valor de: R$" + valor);
         }
 
-    }
-    public void mostrarSaldo(){
-        System.out.println("Seu saldo é de :R$ " + saldo);
 
     }
-}
+
+    }
+
+
