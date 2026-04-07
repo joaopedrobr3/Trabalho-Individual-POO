@@ -65,22 +65,22 @@ public class ContaBancaria{
     public int getNumero(){
         return numero;
     }
-    public void setNumero(int n){
-        this.numero = n;
+    public void setNumero(int numero){
+        this.numero = numero;
     }
 
     public String getTitular(){
         return titular;
     }
-    public void setTitular(String t){
-        this.titular = t;
+    public void setTitular(String titular){
+        this.titular = titular;
     }
 
     public double getSaldo(){
         return saldo;
     }
-    public void setSaldo(double s){
-        this.saldo = s;
+    public void setSaldo(double saldo){
+        this.saldo = saldo;
     }
 
     public int getcontadorSaques(){
