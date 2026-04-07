@@ -1,10 +1,13 @@
-
-
 class ContaBancaria{
     private int numero;
     private String titular ;
     private double saldo = 50;
     private int contadorSaques = 0;
+
+    public ContaBancaria(int numero, String titular){
+        this.numero = numero;
+        this.titular = titular;
+    }
 
 
     public int getNumero(){
@@ -16,11 +19,10 @@ class ContaBancaria{
     public double getSaldo(){
         return saldo;
     }
-
-    public ContaBancaria(int numero, String titular){
-        this.numero = numero;
-        this.titular = titular;
+    public int getcontadorSaques(){
+        return contadorSaques;
     }
+
 
     public void depositar(double valor){
         if(valor > 0){
@@ -39,21 +41,19 @@ class ContaBancaria{
         else if(valor <= 0){
             System.out.println("Valor Inválido!");
         }
-        else if(valor > saldo){
+        else if(valor > this.getSaldo()){
             System.out.println("Saldo Insuficiente!");
         }
-        else if(contadorSaques >= 3){
+        else if(this.contadorSaques >= 3){
             System.out.println("Limites de saques diários atingido!");
         }
         else{
             saldo = saldo - valor;
-            contadorSaques++;
+            this.contadorSaques++;
             System.out.println("Você realizou um saque no valor de: R$" + valor);
         }
 
-
     }
 
-    }
-
+}
 
