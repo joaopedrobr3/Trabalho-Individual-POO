@@ -5,13 +5,16 @@ public class ContaBancaria{
     private double saldo = 50;
     private int contadorSaques = 0;
 
-    public static ContaBancaria validacao(){
+    public ContaBancaria (int numero, String titular){
+        this.numero = numero;
+        this.titular = titular;
+    }
+
+    public static ContaBancaria criarConta(){
         Scanner leia = new Scanner(System.in);
 
-        ContaBancaria validacao = new ContaBancaria();
-
-        System.out.println("Olá!");
-        System.out.println("Digite o número da conta que deseja acessar: ");
+        System.out.println("Olá! Bem vindo!");
+        System.out.println("Digite o número da conta: ");
         int numero = leia.nextInt();
 
         while(numero <= 0){
@@ -20,19 +23,64 @@ public class ContaBancaria{
         }
         leia.nextLine();
 
-        System.out.println("Digite o nome do titular da conta que deseja acessar: ");
+        System.out.println("Digite o nome do titular da conta: ");
         String titular = leia.nextLine();
 
         while(titular == null || titular.isEmpty()){
             System.out.println("O nome do titular não pode ficar vazio\nDigite um nome de titular válido:");
             titular = leia.nextLine();
         }
-        return validacao;
+        return new ContaBancaria(numero, titular);
+    }
+
+    public void menu(){
+        int opcao;
+        double valor;
+
+        Scanner leia = new Scanner(System.in);
+
+        do {
+            System.out.println("Conta de " + titular);
+            System.out.println("MENU");
+            System.out.println("1 - Ver Saldo");
+            System.out.println("2 - Depositar");
+            System.out.println("3 - Sacar");
+            System.out.println("0 - Sair");
+            opcao = leia.nextInt();
+
+            switch(opcao){
+
+                case 1:
+                    System.out.println("Seu saldo é de :R$ " + getSaldo());
+                    break;
+
+                case 2:
+                    System.out.println("Quanto você deseja depositar: ");
+                    valor = leia.nextDouble();
+                    depositar(valor);
+                    break;
+
+                case 3:
+                    System.out.println("Quanto você deseja sacar: ");
+                    valor = leia.nextDouble();
+                    sacar(valor);
+                    break;
+
+                case 0:
+                    System.out.println("Finalizando Atendimento...");
+                    break;
+
+                default:
+                    System.out.println("Opção Inválida!");
+                    break;
+            }
+        }while(opcao != 0);
+
     }
 
     public void depositar(double valor){
         if(valor > 0){
-            saldo = saldo + valor;
+            saldo += valor;
             System.out.println("Você realizou um deposito no valor de: R$" + valor);
         }
         else{
@@ -52,10 +100,10 @@ public class ContaBancaria{
             System.out.println("Saldo Insuficiente!");
         }
         else if(this.contadorSaques >= 3){
-            System.out.println("Limites de saques diários atingido!");
+            System.out.println("Limite de saques diários atingido!");
         }
         else{
-            saldo = saldo - valor;
+            saldo -= valor;
             this.contadorSaques++;
             System.out.println("Você realizou um saque no valor de: R$" + valor);
         }
@@ -83,7 +131,7 @@ public class ContaBancaria{
         this.saldo = saldo;
     }
 
-    public int getcontadorSaques(){
+    public int getContadorSaques(){
         return contadorSaques;
     }
 }
