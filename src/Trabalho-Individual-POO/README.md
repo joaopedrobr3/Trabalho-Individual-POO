@@ -1,2 +1,0 @@
-# Trabalho-Individual-POO
-ALUNO: JOÃO PEDRO CARNEIRO MOTTA
