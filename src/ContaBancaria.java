@@ -5,6 +5,9 @@ public class ContaBancaria{
     private double saldo;
     private int contadorSaques = 0;
 
+    public ContaBancaria() {
+    }
+
     public ContaBancaria (int numero, String titular){
         this.numero = numero;
         this.titular = titular;
