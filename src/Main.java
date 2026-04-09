@@ -7,6 +7,7 @@ public class Main {
         Scanner leia = new Scanner(System.in);
 
         System.out.println("Olá! Bem vindo!");
+        System.out.println("Vamos criar a sua conta!\n");
         System.out.println("Digite o número da conta: ");
         int numero = leia.nextInt();
 
@@ -23,6 +24,9 @@ public class Main {
             System.out.println("O nome do titular não pode ficar vazio\nDigite um nome de titular válido:");
             titular = leia.nextLine();
         }
+
+        System.out.println("Conta criada com sucesso!");
+        System.out.println("Toda conta nova ganha um bonus de R$ 50,00");
         ContaBancaria conta = new ContaBancaria(numero, titular);
 
         do {
