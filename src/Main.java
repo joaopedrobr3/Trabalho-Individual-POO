@@ -25,6 +25,7 @@ public class Main {
             titular = leia.nextLine();
         }
 
+
         System.out.println("Conta criada com sucesso!");
         System.out.println("Toda conta nova ganha um bonus de R$ 50,00");
         ContaBancaria conta = new ContaBancaria(numero, titular);
@@ -66,5 +67,7 @@ public class Main {
                     break;
             }
         }while(opcao != 0);
+
+        leia.close();
     }
 }
