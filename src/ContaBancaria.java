@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class ContaBancaria{
     private int numero;
     private String titular ;
-    private double saldo = 50;
+    private double saldo;
     private int contadorSaques = 0;
 
     public ContaBancaria (int numero, String titular){
