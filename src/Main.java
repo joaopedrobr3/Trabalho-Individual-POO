@@ -31,7 +31,7 @@ public class Main {
         ContaBancaria conta = new ContaBancaria(numero, titular);
 
         do {
-            System.out.println("---------------");
+            System.out.println("\n---------------");
             System.out.println("Conta de:\n " + conta.getTitular());
             System.out.println("====MENU====");
             System.out.println("1 - Ver Saldo");
@@ -43,7 +43,7 @@ public class Main {
             switch(opcao){
 
                 case 1:
-                    System.out.println("Seu saldo é de :R$" + conta.getSaldo());
+                    System.out.printf("Seu saldo é de :R$" + String.format("%.2f", conta.getSaldo()));
                     break;
 
                 case 2:
