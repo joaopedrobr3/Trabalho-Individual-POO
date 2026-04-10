@@ -1,4 +1,4 @@
-import java.util.Scanner;
+
 public class ContaBancaria{
     private int numero;
     private String titular ;
@@ -17,7 +17,7 @@ public class ContaBancaria{
     public void depositar(double valor){
         if(valor > 0){
             saldo += valor;
-            System.out.println("Você realizou um deposito no valor de: R$" + valor);
+            System.out.printf("Você realizou um deposito no valor de:R$ %.2f\n" ,valor );
         }
         else{
             System.out.println("Valor Inválido!");
@@ -41,7 +41,7 @@ public class ContaBancaria{
         else{
             saldo -= valor;
             this.contadorSaques++;
-            System.out.println("Você realizou um saque no valor de: R$" + valor);
+            System.out.printf("Você realizou um saque no valor de: R$ %.2f\n" ,valor );
         }
 
     }
