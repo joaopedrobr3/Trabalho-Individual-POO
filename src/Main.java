@@ -24,11 +24,11 @@ public class Main {
             System.out.println("O nome do titular não pode ficar vazio\nDigite um nome de titular válido:");
             titular = leia.nextLine();
         }
-
+        ContaBancaria conta = new ContaBancaria(numero, titular);
 
         System.out.println("Conta criada com sucesso!");
         System.out.println("Toda conta nova ganha um bonus de R$ 50,00");
-        ContaBancaria conta = new ContaBancaria(numero, titular);
+
 
         do {
             System.out.println("\n---------------");
@@ -43,7 +43,7 @@ public class Main {
             switch(opcao){
 
                 case 1:
-                    System.out.printf("Seu saldo é de :R$" + String.format("%.2f", conta.getSaldo()));
+                    System.out.printf("Seu saldo é de :R$%.2f\n", conta.getSaldo());
                     break;
 
                 case 2:
