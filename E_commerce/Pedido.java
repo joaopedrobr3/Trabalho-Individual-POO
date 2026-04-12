@@ -6,17 +6,31 @@ import java.util.List;
 public class Pedido {
     private Cliente cliente;
     private List<ItemPedido> itens;
-    private Double valorTotal = 0.0;
 
-    public Pedido(Cliente cliente, List<ItemPedido> itens, Double valorTotal) {
+
+    public Pedido(Cliente cliente, List<ItemPedido> itens) {
         this.cliente = cliente;
         this.itens = new ArrayList<>();
-        this.valorTotal = valorTotal;
     }
-    public void adicionarProduto(ItemPedido pedido, Integer quantidade){
-        ItemPedido item = new ItemPedido(pedido, quantidade);
+    public void adicionarItem(ItemPedido item){
         itens.add(item);
-        valorTotal += item.getPreco();
-
     }
+    public Double calcularTotal(){
+        Double total = 0.0;
+
+        for(ItemPedido item : itens){
+            total += item.calcularSubtotal();
+        }
+        return total;
+    }
+    public Double calcularFrete(){
+        if(total > 250){
+            return 0.0;
+        }
+        else{
+            return 25.0;
+        }
+    }
+
+
 }
