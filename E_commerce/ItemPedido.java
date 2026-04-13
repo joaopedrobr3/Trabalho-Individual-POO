@@ -5,6 +5,10 @@ public class ItemPedido {
     private Double preco;
     private Integer quantidade;
 
+
+    public ItemPedido() {
+    }
+
     public ItemPedido(String nomeProduto, Double preco, Integer quantidade) {
         this.nomeProduto = nomeProduto;
         this.preco = preco;
@@ -14,7 +18,7 @@ public class ItemPedido {
         return preco * quantidade;
     }
 
-    public String getNomePedido() {
+    public String getNomeProduto() {
         return nomeProduto;
     }
 
@@ -27,5 +31,15 @@ public class ItemPedido {
     }
 
 
+    @Override
+    public String toString() {
+        return String.format( "\nProduto: " + getNomeProduto()
+                            + "\nQuantidade: " + getQuantidade()
+                            + "\nPreco Unitário: R$ " + getPreco()
+                            + "\nSubtotal: R$" + calcularSubtotal())
+                            + "\n" +
+                                 "\n=======================\n";
 
+
+    }
 }
