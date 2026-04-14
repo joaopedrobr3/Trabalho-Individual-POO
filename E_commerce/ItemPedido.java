@@ -37,8 +37,9 @@ public class ItemPedido {
                             + "\nQuantidade: " + getQuantidade()
                             + "\nPreco Unitário: R$ " + getPreco()
                             + "\nSubtotal: R$" + calcularSubtotal())
-                            + "\n" +
-                                 "\n=======================\n";
+                            + "\n-----------------------";
+
+
 
 
     }
