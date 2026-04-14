@@ -48,11 +48,11 @@ public class Pedido {
             System.out.println(" Recibo do pedido Número: " + getId());
             System.out.println("\nCliente: " + cliente.getNome());
             System.out.println("CPF: " + cliente.getCpf());
-            System.out.println("==================\n");
+            System.out.println("==================");
               for (ItemPedido item : itens) {  //
                System.out.println(item);
              }
-            System.out.println("\nTotal: R$" + calcularTotal());
+            System.out.println("Total: R$" + calcularTotal());
             if(frete == 0){
                 System.out.println("Frete: Grátis!\n");
             }
