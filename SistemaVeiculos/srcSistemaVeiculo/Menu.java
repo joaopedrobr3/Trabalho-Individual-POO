@@ -84,7 +84,6 @@ public class Menu {
     }
 
     private void listarVeiculos(List<Veiculo> veiculos) {
-        System.out.println("ID " + "   Placa" + "   Marca" + "     Data Fab." + "    Fipe");
         for (int i = 0; i < veiculos.size(); i++) {
 
             Veiculo v = veiculos.get(i);
